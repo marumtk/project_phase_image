@@ -13,10 +13,10 @@
 
 #pragma comment(lib, "StdLibrary.lib")
 
-#define PROJ_FRAME_PER_SEC 800
+#define PROJ_FRAME_PER_SEC 700
 #define PROJ_VALID_BITS 8
 #define PROJ_TRIG_DELAY 0
-#define PROJ_LED_DELAY 0
+#define PROJ_LED_DELAY 600
 #define PROJ_MIRROR_MODE 1 // 0: disable 1: enable (í èÌÇÕ1)
 #define PROJ_COMP_DATA 0 // 0: disable 1: enable (í èÌÇÕ0)
 #define PROJ_FLIP_MODE 0 // 0: disable 1: enable (í èÌÇÕ0)

@@ -1,0 +1,68 @@
+#pragma once
+#include <Windows.h>
+#include <iostream>
+#include <conio.h>
+#include <opencv2/opencv.hpp>
+//#include <opencv2/opencv_lib.hpp>
+#include "Highspeedproj.h"
+#include <vector>
+#include "basler.h"
+#include "Webcam.h"
+
+using namespace std;
+using namespace cv;
+
+// sin”g‚Ì‰æ‘œ‚ğ¶¬‚·‚éƒvƒƒOƒ‰ƒ€
+vector<Mat1b> create_image(vector<Mat1b> &result){
+	const string base = "sinimage_";
+	vector<string> files;
+
+	files.push_back(base+"1.tif");
+	files.push_back(base+"2.tif");
+	files.push_back(base+"3.tif");
+
+	vector<string>::iterator p = files.begin();
+	for(;p!=files.end();++p){
+		Mat img = imread(*p,0);
+		result.push_back(img);
+	}
+
+	return result;
+
+};
+
+
+
+int main(){
+
+	//Ximea‚ÌB‘œ€”õ
+	Basler Ximea;
+	Ximea.camera_init();
+	cv::Mat XimeaImage;
+	
+	//‰æ‘œ¶¬
+	vector<Mat1b> input;
+	int i;
+	input = create_image(input);
+
+	HighSpeedProj hsproj;
+	hsproj.connectProj();
+	
+	while(true){	
+		//“Š‰e
+		for(i=0;i<input.size();i++){
+			hsproj.sendImage(input.at(i));
+		}
+	
+		//B‘œ
+		Basler.cap_gray(XimeaImage);
+		if(XimeaImage.data != 0){
+			cv::imshow("RightImageWindow",XimeaImage);
+		}
+		int key = cv::waitKey(1);
+		if(_kbhit()) break;
+	}
+	
+
+	return 0;
+}
