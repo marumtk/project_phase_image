@@ -108,23 +108,23 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\k2vision\Desktop\opencv\build\include;C:\Program Files\Basler\pylon 5\Development\include;C:\Users\k2vision\Desktop\amano\HighSpeedProjecterLibrary\HighSpeedProjecterLibrary;C:\XIMEA\API;C:\Program Files\eigen3.2.9;C:\Users\k2vision\Desktop\fadeRelease_v1.41\fadeRelease\include_fade2d;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\k2vision\Desktop\opencv\build\include;C:\Program Files\Basler\pylon 5\Development\include;C:\XIMEA\API;C:\Program Files\eigen3.2.9;C:\Users\k2vision\Desktop\fadeRelease_v1.41\fadeRelease\include_fade2d;.\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\k2vision\Desktop\opencv\build\x64\vc14\lib\;C:\Program Files\Basler\pylon 5\Development\lib\x64;C:\Users\k2vision\Desktop\amano\prj_20160314_release\prj_20160314_release\x64\Release;C:\XIMEA\API\x64;C:\Users\k2vision\Desktop\fadeRelease_v1.41\fadeRelease\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\k2vision\Desktop\opencv\build\x64\vc14\lib\;C:\Program Files\Basler\pylon 5\Development\lib\x64;C:\Users\k2vision\Desktop\maruyama\prj_20170413\prj_20160314_release\x64\Release;C:\XIMEA\API\x64;C:\Users\k2vision\Desktop\fadeRelease_v1.41\fadeRelease\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_world310.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="basler.h" />
-    <ClInclude Include="HighSpeedProj.h" />
+    <ClInclude Include="HighSpeedProj_test.h" />
     <ClInclude Include="Webcam.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="basler.cpp" />
-    <ClCompile Include="HighSpeedProj.cpp" />
+    <ClCompile Include="HighSpeedProj_test.cpp" />
     <ClCompile Include="phase_projecting.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
